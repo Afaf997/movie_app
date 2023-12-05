@@ -1,13 +1,11 @@
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:movie_app/controller/bottomnavigation.dart';
-import 'package:movie_app/views/searchpage.dart';
+import 'package:movie_app/moviesDocument/views/search.dart';
 import 'package:movie_app/widget/botoomnavigation.dart';
 import 'package:movie_app/widget/drawer.dart';
+import 'package:movie_app/widget/fullslider.dart';
 import 'package:movie_app/widget/movieslider.dart';
 import 'package:movie_app/widget/trendingslider.dart';
-import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -38,7 +36,7 @@ class HomeScreen extends StatelessWidget {
           filterQuality: FilterQuality.high,
         ),
         automaticallyImplyLeading: false,
-        actions: [IconButton(onPressed: (){Navigator.push(context,MaterialPageRoute(builder: (context)=>const MovieSearch()));},
+        actions: [IconButton(onPressed: (){Navigator.push(context,MaterialPageRoute(builder: (context)=> MovieSearch()));},
          icon:const Icon(Icons.search),
          iconSize: 33,)],
       ),
@@ -70,13 +68,21 @@ class HomeScreen extends StatelessWidget {
               ),
              const SizedBox( height: 32,
               ),
+              const FullSlider(),
+               const SizedBox(height: 32,
+              ),
+              Text( "All Movies",
+                style: GoogleFonts.aBeeZee(fontSize: 24),
+              ),
+             const SizedBox( height: 32,
+              ),
               const MovieSlider(),
             ],
           ),
         ),
       ),
        bottomNavigationBar:const BottomNavigation(),
-        drawer: const AppDrawer(),
+        drawer:  AppDrawer(),
     ); 
     
   }

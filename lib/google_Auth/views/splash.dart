@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:movie_app/views/screen.dart';
+import 'package:movie_app/google_Auth/views/googleLogin.dart';
 
 class SplashScreen extends StatefulWidget {
   @override

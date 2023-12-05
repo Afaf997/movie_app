@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/controller/bottomnavigation.dart';
-import 'package:movie_app/views/favorites.dart';
-import 'package:movie_app/views/homescreen.dart';
+import 'package:movie_app/moviesDocument/controller/bottomNavigation.dart';
+import 'package:movie_app/moviesDocument/views/Homescreen.dart';
+import 'package:movie_app/moviesDocument/views/favorites.dart';
 import 'package:provider/provider.dart';
 
 class BottomNavigation extends StatelessWidget {
@@ -23,16 +23,12 @@ class BottomNavigation extends StatelessWidget {
                 label: 'Home',
               ),
               BottomNavigationBarItem(
-                icon: Icon(Icons.category,color: Colors.white,),
-                label: 'Categories',
+                icon: Icon(Icons.movie,color: Colors.white,),
+                label: 'News',
               ),
               BottomNavigationBarItem(
                 icon: Icon(Icons.favorite,color: Colors.white,),
                 label: 'Favorites',
-              ),
-              BottomNavigationBarItem(
-                icon: Icon(Icons.person,color: Colors.white,),
-                label: 'Profile',
               ),
             ],
           );    },

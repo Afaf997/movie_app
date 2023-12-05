@@ -1,83 +1,110 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
+
 class AppDrawer extends StatelessWidget {
-  const AppDrawer({Key? key}) : super(key: key);
+   AppDrawer({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: Container(
-        color: Colors.transparent,
-        child: Stack(
-          children: [
-            Column(
+      // backgroundColor: const Color.fromARGB(100, 22, 44, 33),
+      backgroundColor:const Color.fromARGB(255, 108, 21, 15).withOpacity(0.6),
+      child: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+         const DrawerHeader(
+            decoration: const BoxDecoration(
+              color: Colors.black,
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                DrawerHeader(
-                  decoration: BoxDecoration(
-                    // color: Colors.transparent,
-                       color: Colors.black.withOpacity(0.8),
-                  ),
-                  child: Text(
-                    'Profile',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 24,
-                    ),
-                  ),
+                CircleAvatar(
+                  radius: 40,
+                  // backgroundImage: NetworkImage(
+                  //     FirebaseAuth.instance.currentUser!.photoURL!),
                 ),
-                ListTile(
-                  title: Text(
-                    'Item 1',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                  onTap: () {
-                    // Handle item 1 click
-                  },
-                ),
-                ListTile(
-                  title: Text(
-                    'Item 2',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                  onTap: () {
-                    // Handle item 2 click
-                  },
-                ),
-                ListTile(
-                  title: Text(
-                    'Item 3',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                  onTap: () {
-                    // Handle item 3 click
-                  },
-                ),
-                ListTile(
-                  title: Text(
-                    'Item 4',
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 18,
-                    ),
-                  ),
-                  onTap: () {
-                    // Handle item 4 click
-                  },
-                ),
+                const SizedBox(height: 10),
+                // Text(
+                //   FirebaseAuth.instance.currentUser!.displayName!,
+                //   style: const TextStyle(
+                //     color: Colors.white,
+                //     fontSize: 18,
+                //     fontWeight: FontWeight.bold,
+                //   ),
+                // ),
+                const SizedBox(height: 5),
+                // Text(
+                  // '${FirebaseAuth.instance.currentUser!.email}',
+                  // style: const TextStyle(
+                  //   color: Colors.white,
+                  //   fontSize: 14,
+                  // ),
+                // ),
               ],
             ),
-          ],
-        ),
+          ),
+          ListTile(
+            leading: Icon(
+              Icons.home,
+            ),
+            title: const Text('Home', style: TextStyle(color: Colors.white)),
+       trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
+          ),
+                 ListTile(
+            leading:const Icon(
+              Icons.movie,
+            ),
+            title: const Text('Top rated Movies', style: TextStyle(color: Colors.white)),
+        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
+          ),
+                 ListTile(
+            leading:const Icon(
+              Icons.movie,
+            ),
+            title: const Text('UpComing Movies', style: TextStyle(color: Colors.white)),
+        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
+          ),
+          ListTile(
+            leading:const Icon(
+              Icons.movie,
+            ),
+            title: const Text('Malayalam Movies', style: TextStyle(color: Colors.white)),
+        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
+          ),
+              ListTile(
+            leading:const Icon(
+              Icons.movie,
+            ),
+            title: const Text('Tamil Movies', style: TextStyle(color: Colors.white)),
+        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
+          ),
+              ListTile(
+            leading:const Icon(
+              Icons.movie,
+            ),
+            title: const Text('Hindi Movies', style: TextStyle(color: Colors.white)),
+        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
+          ),
+              ListTile(
+            leading:const Icon(
+              Icons.movie,
+            ),
+            title: const Text('Movie News', style: TextStyle(color: Colors.white)),
+        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
+          ),
+          ListTile(
+            leading:const Icon(
+              Icons.logout,
+              // color: white,
+            ),
+            title: const Text('Logout', style: TextStyle(color: Colors.white)),
+            trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
+          ),
+        ],
       ),
     );
   }
 }
+

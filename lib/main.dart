@@ -1,11 +1,9 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/controller/bottomnavigation.dart';
 import 'package:movie_app/firebase_options.dart';
-import 'package:movie_app/views/homescreen.dart';
-import 'package:movie_app/views/screen.dart';
-import 'package:movie_app/views/splash.dart';
+import 'package:movie_app/google_Auth/views/splash.dart';
+import 'package:movie_app/moviesDocument/controller/bottomNavigation.dart';
 import 'package:provider/provider.dart';
 
 void main()async{
@@ -37,15 +35,19 @@ class MyApp extends StatelessWidget {
        theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
        ),
-       home:StreamBuilder(
-        stream:FirebaseAuth.instance.authStateChanges() ,
-        builder:(context,snapshot){
-           if(snapshot.data == null){
-            return const ScreenPage();
-           }else{
-            return HomeScreen();
-           }
-        } ,)
+       home: SplashScreen(),
+      //  home: StreamBuilder(
+      //     stream: FirebaseAuth.instance.authStateChanges(),
+      //     builder: (context, snapshot) {
+      //       if (snapshot.connectionState == ConnectionState.waiting) {
+      //         return SplashScreen(); // Show a loading indicator or splash screen
+      //       } else if (snapshot.hasData) {
+      //         return HomeScreen();
+      //       } else {
+      //         return ScreenPage();
+      //       }
+      //     },
+      //   ),
       ),
     );
   }

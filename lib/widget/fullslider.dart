@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class MovieSlider extends StatelessWidget {
-  const MovieSlider({super.key});
+class FullSlider extends StatelessWidget {
+  const FullSlider({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class MovieSlider extends StatelessWidget {
                 child: Container(
                   color: const Color.fromARGB(255, 156, 37, 28),
                   height: 200,
-                  width: 130,
+                  width: 260,
                 ),
               ),
             );

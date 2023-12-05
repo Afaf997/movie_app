@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:movie_app/views/homescreen.dart';
-import 'package:movie_app/views/login.dart';
-import 'package:provider/provider.dart';
+import 'package:movie_app/moviesDocument/views/Homescreen.dart';
+
 
 class SigninPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
