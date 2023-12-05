@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/services/authservices.dart';
+import 'package:movie_app/views/homescreen.dart';
 import 'package:movie_app/views/login.dart';
 import 'package:movie_app/views/signIn.dart';
 
@@ -62,11 +64,8 @@ class ScreenPage extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => LoginPage()));
+                      onPressed: () async{
+                        await FirebaseServices().signInWithGoolge();
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.amber,
@@ -75,7 +74,7 @@ class ScreenPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
-                      child: const Text('Login',
+                      child: const Text('login with Google',
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ),

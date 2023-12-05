@@ -1,13 +1,24 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app/views/homescreen.dart';
 import 'package:movie_app/views/login.dart';
+import 'package:provider/provider.dart';
 
 class SigninPage extends StatelessWidget {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
+  final  TextEditingController namecontroller=TextEditingController();
+  final  TextEditingController numbercontroller=TextEditingController();
+
 
   @override
   Widget build(BuildContext context) {
+
+  String imageUrl = '';
+  String selectFileName = '';
+  final bool isEditing;
+  final Map<String, dynamic>? student;
+  
+
     return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.black,
@@ -54,7 +65,7 @@ class SigninPage extends StatelessWidget {
                     ),
                       SizedBox(height: 20),
                     TextFormField(
-                      controller: emailController,
+                      controller: namecontroller,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: 'name',
@@ -70,7 +81,7 @@ class SigninPage extends StatelessWidget {
                     ),
                       SizedBox(height: 20),
                     TextFormField(
-                      controller: emailController,
+                      controller: numbercontroller,
                       keyboardType: TextInputType.emailAddress,
                       decoration: InputDecoration(
                         labelText: 'phone number',
@@ -122,9 +133,8 @@ class SigninPage extends StatelessWidget {
                  Container(
                         width: double.infinity, 
                         child: ElevatedButton(
-                          onPressed: () {
-                            Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeScreen()));
-                          },
+                          onPressed: () async{
+        },
                           style: ElevatedButton.styleFrom(
                             backgroundColor: Colors.amber[300],
                             padding:const EdgeInsets.all(16), 
@@ -149,13 +159,14 @@ class SigninPage extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
+                    
                   },
                   child:const Text('already have an account?',style: TextStyle(fontSize:18,color: Colors.orange ),),
                 ),
                const SizedBox(width: 20),
                 GestureDetector(
                   onTap: () {
-                         Navigator.push(context,MaterialPageRoute(builder: (context)=>LoginPage()));
+                         Navigator.push(context,MaterialPageRoute(builder: (context)=>HomeScreen()));
                   },
                   child:const Text('Log in ',style: TextStyle(fontSize:18,color: Colors.orange )),
                 ),

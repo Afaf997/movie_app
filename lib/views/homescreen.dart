@@ -1,9 +1,13 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:movie_app/controller/bottomnavigation.dart';
 import 'package:movie_app/views/searchpage.dart';
+import 'package:movie_app/widget/botoomnavigation.dart';
+import 'package:movie_app/widget/drawer.dart';
 import 'package:movie_app/widget/movieslider.dart';
 import 'package:movie_app/widget/trendingslider.dart';
+import 'package:provider/provider.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -14,6 +18,17 @@ class HomeScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
+     leading: Builder(
+          builder: (BuildContext context) {
+            return IconButton(
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              },
+              icon: Icon(Icons.menu),
+              iconSize: 32,
+            );
+          },
+        ),
         centerTitle: true,
         title: Image.asset(
           'assets/movie1.avif',
@@ -60,6 +75,9 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-    );
+       bottomNavigationBar:const BottomNavigation(),
+        drawer: const AppDrawer(),
+    ); 
+    
   }
 }

@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "459735895311",
+    "project_id": "authenticationbloc-d1ff7",
+    "storage_bucket": "authenticationbloc-d1ff7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459735895311:android:a40963483b68efa034827a",
+        "android_client_info": {
+          "package_name": "com.example.movie_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459735895311-t4pposc3luctfojvndsg87ctl1hf0ndl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW8gYjcIwg78GZ-M9b7EyDEkWlpNnIVao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459735895311-t4pposc3luctfojvndsg87ctl1hf0ndl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "459735895311-42hqpe6utgn21la4pkk7rjgd1igoq9jr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.movieApp.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:459735895311:android:df8f9a45b773430d34827a",
+        "android_client_info": {
+          "package_name": "com.example.validation_project"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "459735895311-t4pposc3luctfojvndsg87ctl1hf0ndl.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAW8gYjcIwg78GZ-M9b7EyDEkWlpNnIVao"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "459735895311-t4pposc3luctfojvndsg87ctl1hf0ndl.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "459735895311-42hqpe6utgn21la4pkk7rjgd1igoq9jr.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.movieApp.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
