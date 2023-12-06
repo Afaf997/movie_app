@@ -9,7 +9,7 @@ class AppDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       // backgroundColor: const Color.fromARGB(100, 22, 44, 33),
-      backgroundColor:const Color.fromARGB(255, 108, 21, 15).withOpacity(0.6),
+      backgroundColor:Color.fromARGB(255, 0, 0, 0).withOpacity(0.6),
       child: ListView(
         padding: EdgeInsets.zero,
         children: [

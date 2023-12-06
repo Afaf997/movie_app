@@ -52,7 +52,7 @@ class HomeScreen extends StatelessWidget {
               ),
               const SizedBox( height: 32,
               ),
-             const TrendingSlides(),
+             TrendingSlides(),
               const SizedBox( height: 32,
               ),
               Text( "Top rated Movies",
@@ -81,7 +81,7 @@ class HomeScreen extends StatelessWidget {
           ),
         ),
       ),
-       bottomNavigationBar:const BottomNavigation(),
+       bottomNavigationBar: BottomNavigation(),
         drawer:  AppDrawer(),
     ); 
     

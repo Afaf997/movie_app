@@ -7,6 +7,7 @@ class MovieSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color.fromARGB(255, 63, 10, 7),
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);

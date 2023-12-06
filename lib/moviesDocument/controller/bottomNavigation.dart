@@ -1,12 +1,10 @@
-import 'package:flutter/material.dart';
 
-class NavigationProvider extends ChangeNotifier {
-  int _currentIndex = 0;
+import 'package:get/state_manager.dart';
 
-  int get currentIndex => _currentIndex;
+class NavigationController extends GetxController {
+  RxInt currentIndex = 0.obs;
 
   void setIndex(int index) {
-    _currentIndex = index;
-    notifyListeners();
+    currentIndex.value = index;
   }
 }
