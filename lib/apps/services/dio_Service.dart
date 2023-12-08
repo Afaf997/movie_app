@@ -29,7 +29,7 @@ class ApiCall{
       final response = await dio.get(url);
       var movies = response.data['results'] as List;
       movieList = movies.map((m) => Results.fromJson(m)).toList();
-      print("data recievd");
+      print("data malayalam");
       return movieList;
     } catch (error, stacktrace) {
       throw Exception('Exception occured: $error with stacktrace: $stacktrace');

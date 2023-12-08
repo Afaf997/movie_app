@@ -1,4 +1,3 @@
-// ignore: file_names
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,6 +8,7 @@ import 'package:movie_app/apps/widget/Movie_carosel.dart';
 import 'package:movie_app/apps/widget/drawer.dart';
 import 'package:movie_app/apps/widget/fullslider.dart';
 import 'package:movie_app/apps/widget/movieslider.dart';
+import 'package:movie_app/apps/widget/sectionText.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -45,16 +45,16 @@ class HomeScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               CustomCarouselSlider(data: mainController.popularShows),
-             
               const SizedBox( height: 32,
               ),
-        
               Text( "Top rated Movies",
                 style: GoogleFonts.aBeeZee(fontSize: 24),
               ),
              const SizedBox( height: 32,
               ),
-              const MovieSlider(),
+              MovieSlider(
+                        popularMovies: mainController.malayalamMovies),
+                    // sectionText('TOP Rated', 'Movies'),
               const SizedBox(height: 32,
               ),
               Text( "Upcoming Movies",
