@@ -2,6 +2,7 @@
  
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:movie_app/apps/model/TvShow.dart';
 import 'package:movie_app/apps/model/moviesModel.dart';
 import 'package:movie_app/apps/widget/movieCard.dart';
@@ -12,36 +13,38 @@ class MovieSlider extends StatefulWidget {
   const MovieSlider({super.key, this.popularMovies = const []});
 
   @override
-  State<MovieSlider> createState() => _CustomListMovieState();
+  State<MovieSlider> createState() => _MovieSliderState();
 }
 
-class _CustomListMovieState extends State<MovieSlider>
+class _MovieSliderState extends State<MovieSlider>
     with AutomaticKeepAliveClientMixin {
   @override
   bool get wantKeepAlive => true;
   @override
   Widget build(BuildContext context) {
     super.build(context);
-    return SizedBox(
-      height: 200,
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        physics: const BouncingScrollPhysics(),
-        itemCount:
-            widget.popularMovies.length > 20 ? 20 : widget.popularMovies.length,
-        cacheExtent: 9999,
-        itemBuilder: (context, index) {
-          var url = widget.popularMovies[index].posterPath.toString();
-          return KeyedSubtree(
-              key: UniqueKey(),
-              child: MovieCard(
-                mediaType: 'movie',
-                id: widget.popularMovies[index].id.toString(),
-                title: widget.popularMovies[index].title.toString(),
-                image: CachedNetworkImageProvider(
-                    "https://image.tmdb.org/t/p/w500$url"),
-              ));
-        },
+    return Obx(()=>
+    SizedBox(
+        height: 200,
+        child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          physics: const BouncingScrollPhysics(),
+          itemCount:
+              widget.popularMovies.length > 20 ? 20 : widget.popularMovies.length,
+          // cacheExtent: 9999,
+          itemBuilder: (context, index) {
+            var url = widget.popularMovies[index].posterPath.toString();
+            return KeyedSubtree(
+                key: UniqueKey(),
+                child: MovieCard(
+                  mediaType: 'movie',
+                  id: widget.popularMovies[index].id.toString(),
+                  title: widget.popularMovies[index].title.toString(),
+                  image: CachedNetworkImageProvider(
+                      "https://image.tmdb.org/t/p/w500$url"),
+                ));
+          },
+        ),
       ),
     );
   }

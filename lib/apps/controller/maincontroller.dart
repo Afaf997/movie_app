@@ -9,16 +9,17 @@ class MainController extends GetxController {
   var isVisible = true.obs;
   var isLoading = true.obs;
   var currentIndex = 0.obs;
+
+
    var trendingMovies = <Results>[].obs;
   // final futureArticles = <Article>[].obs;
-  
-
   var popularMovies = <Results>[].obs;
   var animatedMovies = <Results>[].obs;
   var malayalamMovies = <Results>[].obs;
   var topRatedMovie = <Results>[].obs;
   var topRatedShows = <TvShow>[].obs;
   var popularShows = <TvShow>[].obs;
+  var nowPLayingMovie =<Results>[].obs;
  
 
   @override
@@ -32,10 +33,10 @@ class MainController extends GetxController {
      topRatedShows.value = await ApiCall().getTopRatedShow();
     malayalamMovies.value = await ApiCall().getMalayamLanguage();
     popularMovies.value = await ApiCall().popularMovies();
-    // topRatedMovie.value = await ApiCall().getTopRatedMovie();
+    topRatedMovie.value = await ApiCall().getTopRatedMovie();
      popularShows.value = await ApiCall().getRecommendedTvShows('1396');
-    // nowPLayingMovie.value = await ApiCall().getNowPLayingMovie();
-    // animatedMovies.value = await ApiCall().getAnimated();
+    nowPLayingMovie.value = await ApiCall().getNowPLayingMovie();
+    animatedMovies.value = await ApiCall().getAnimated();
 
     isLoading.value = false;
   }

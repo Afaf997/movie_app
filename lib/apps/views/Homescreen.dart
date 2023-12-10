@@ -8,7 +8,7 @@ import 'package:movie_app/apps/widget/Movie_carosel.dart';
 import 'package:movie_app/apps/widget/drawer.dart';
 import 'package:movie_app/apps/widget/fullslider.dart';
 import 'package:movie_app/apps/widget/movieslider.dart';
-import 'package:movie_app/apps/widget/sectionText.dart';
+
 
 
 class HomeScreen extends StatelessWidget {
@@ -53,24 +53,25 @@ class HomeScreen extends StatelessWidget {
              const SizedBox( height: 32,
               ),
               MovieSlider(
-                        popularMovies: mainController.malayalamMovies),
-                    // sectionText('TOP Rated', 'Movies'),
-              const SizedBox(height: 32,
-              ),
+                        popularMovies: mainController.topRatedMovie),
+              const SizedBox(height: 32),
               Text( "Upcoming Movies",
-                style: GoogleFonts.aBeeZee(fontSize: 24),
-              ),
-             const SizedBox( height: 32,
-              ),
-              FullSlider(popularMovies: mainController.topRatedMovie,),
-               const SizedBox(height: 32,
-              ),
-              Text( "All Movies",
-                style: GoogleFonts.aBeeZee(fontSize: 24),
-              ),
-             const SizedBox( height: 32,
-              ),
-              const MovieSlider(),
+                style: GoogleFonts.aBeeZee(fontSize: 24)),
+             const SizedBox( height: 32),
+              FullSlider(popularMovies: mainController.nowPLayingMovie),
+               const SizedBox(height: 32),
+              Text( "Malayalam Movies",
+                style: GoogleFonts.aBeeZee(fontSize: 24)),
+             const SizedBox( height: 32,),
+               MovieSlider(popularMovies: mainController.malayalamMovies,),
+               const SizedBox(height: 32,),
+               Text( "Animated Movies",
+                style: GoogleFonts.aBeeZee(fontSize: 24)),
+               MovieSlider(popularMovies:mainController.animatedMovies,),
+                const SizedBox(height: 32,),
+               Text( "Popular Movies",
+                style: GoogleFonts.aBeeZee(fontSize: 24)),
+               MovieSlider(popularMovies:mainController.popularMovies,),
             ],
           ),
         ),
