@@ -1,10 +1,9 @@
 import 'dart:convert';
-
-import 'package:movie_app/apps/controller/news.dart';
 import 'package:http/http.dart' as http;
+import 'package:movie_app/apps/model/news_model.dart';
 
 class NewsService {
-  static const String apiKey = 'api_key=2ef804ecf6ad4f1d83d65db2d1001798';
+  static const String apiKey = '2ef804ecf6ad4f1d83d65db2d1001798';
   static const String baseUrl = 'https://newsapi.org/v2/top-headlines';
   static const String category = 'entertainment';
 

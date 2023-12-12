@@ -5,6 +5,8 @@ import 'package:movie_app/apps/controller/bottomNavigation.dart';
 import 'package:movie_app/apps/views/Homescreen.dart';
 import 'package:movie_app/apps/views/moviedetails.dart';
 import 'package:movie_app/apps/views/new_screen.dart';
+import 'package:movie_app/apps/views/search_Screen.dart';
+import 'package:movie_app/apps/views/splash.dart';
 import 'package:movie_app/apps/views/tvshowscreens.dart';
 import 'package:movie_app/apps/widget/botoomnavigation.dart';
 
@@ -33,11 +35,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
       ),
-      home: HomeScreen(),
+      home: SplashScreen(),
             getPages: [
         // GetPage(name: '/login', page: () => const LoginScreen()),
         GetPage(name: '/main', page: () => BottomNavigation()),
-        // GetPage(name: '/search', page: () => const SearchScreen()),
+        GetPage(name: '/search', page: () => const SearchScreen()),
         GetPage(name: '/news', page: () => NewsHomeScreen()),
         GetPage(
           name: '/movie/:id',

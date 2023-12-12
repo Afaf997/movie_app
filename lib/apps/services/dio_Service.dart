@@ -4,13 +4,13 @@ import 'package:movie_app/apps/model/TvShow.dart';
 import 'package:movie_app/apps/model/TvShowDetail.dart';
 import 'package:movie_app/apps/model/moviesModel.dart';
 import 'package:movie_app/apps/model/searchModel.dart';
-import 'package:movie_app/apps/model/video.dart';
+import 'package:movie_app/apps/model/trailer.dart';
 import 'package:movie_app/apps/services/episodeDetails.dart';
 
 class ApiCall{
   final Dio dio=Dio();
   final String mainUrl = 'https://api.themoviedb.org/3';
-   final String apiKey = 'api_key=94755d65f500af1c6668340edf3bb708';
+  final String apiKey = 'api_key=94755d65f500af1c6668340edf3bb708';
 
    Future<List<Results>>popularMovies()async{
     try {
@@ -26,7 +26,7 @@ class ApiCall{
       throw Exception('Exception occured: $error with stacktrace: $stacktrace');
     }
    }
-    Future<List<Results>> getMalayamLanguage() async {
+    Future<List<Results>> getMalayalamLanguage() async {
     try {
       List<Results> movieList = [];
       final url = '$mainUrl/discover/movie?$apiKey&with_original_language=ml';

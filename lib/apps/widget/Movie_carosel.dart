@@ -18,7 +18,7 @@ class CustomCarouselSlider extends StatefulWidget {
 
 class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
   late final PageController _pageController;
-  late Timer _timer; // Store a reference to the timer
+  late Timer _timer; 
   int _currentPage = 0;
 
   @override
@@ -48,7 +48,7 @@ class _CustomCarouselSliderState extends State<CustomCarouselSlider> {
   @override
   void dispose() {
     _pageController.dispose();
-    _timer.cancel(); // Cancel the timer when the widget is disposed
+    _timer.cancel(); 
     super.dispose();
   }
 

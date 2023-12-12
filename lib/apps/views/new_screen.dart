@@ -16,18 +16,15 @@ class NewsHomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-    return Scaffold(
-      
+    return Scaffold(   
       resizeToAvoidBottomInset: false,
       backgroundColor: background_primary,
+        appBar: AppBar(
+        title: Text('Movie News',style: TextStyle(fontWeight: FontWeight.w500),), 
+        automaticallyImplyLeading: true,
+      ),
       body: Stack(
         children: [
-          Image.asset(
-            'assets/background.jpg',
-            fit: BoxFit.fitWidth,
-            width: size.width,
-          ),
           Column(
             children: [
               Expanded(

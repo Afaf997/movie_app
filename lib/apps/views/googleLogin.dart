@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:movie_app/apps/services/authservices.dart';
 import 'package:movie_app/apps/views/Homescreen.dart';
 import 'package:movie_app/apps/views/signIn.dart';
 
@@ -67,12 +69,8 @@ class ScreenPage extends StatelessWidget {
                       onPressed: () async{
                         // await FirebaseServices().signInWithGoogle();
                         // Navigator.pop(context);
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(builder: (context) =>  HomeScreen()),
-                
-              );
-                      },
+                        Get.to(HomeScreen());
+                          },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.amber,
                         padding: const EdgeInsets.all(16),
@@ -86,15 +84,7 @@ class ScreenPage extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(
-                              builder: (context) => SigninPage()));
-                    },
-                    child: const Text('Create Account',
-                        style: TextStyle(fontSize: 18, color: Colors.orange)),
-                  ),
+                
                 ],
               ),
             ),

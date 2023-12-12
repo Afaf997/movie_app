@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:movie_app/apps/controller/news.dart';
+import 'package:movie_app/apps/model/news_model.dart';
 import 'package:movie_app/apps/views/news_details.dart';
 import 'package:movie_app/utils/consts.dart';
 

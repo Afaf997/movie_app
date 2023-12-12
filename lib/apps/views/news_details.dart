@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:movie_app/apps/controller/news.dart';
+import 'package:movie_app/apps/model/news_model.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class NewsDetailsScreen extends StatelessWidget {

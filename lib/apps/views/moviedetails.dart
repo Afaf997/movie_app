@@ -9,7 +9,6 @@ import 'package:movie_app/apps/model/moviesModel.dart';
 import 'package:movie_app/apps/services/dio_Service.dart';
 import 'package:movie_app/apps/views/loding.dart';
 import 'package:movie_app/apps/widget/movieTrailer.dart';
-import 'package:movie_app/apps/widget/movieslider.dart';
 import 'package:movie_app/apps/widget/overviewbox.dart';
 import 'package:movie_app/apps/widget/textContainer.dart';
 import 'package:movie_app/apps/widget/title_text.dart';
@@ -72,6 +71,10 @@ class _MovieScreenState extends State<MovieScreen> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: background_primary,
+        appBar: AppBar(
+        title: Text('Movie Details',style: TextStyle(fontWeight: FontWeight.w500),), 
+        automaticallyImplyLeading: true,
+      ),
       body: isLoading
           ? const LoadingScreen()
           : FutureBuilder(

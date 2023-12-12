@@ -51,49 +51,14 @@ class AppDrawer extends StatelessWidget {
             ),
             title: const Text('Home', style: TextStyle(color: Colors.white)),
        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
-          ),
-                 ListTile(
-            leading:const Icon(
-              Icons.movie,
+          ),SizedBox(height: 10,),
+            ListTile(
+            leading: Icon(
+              Icons.search,
             ),
-            title: const Text('Top rated Movies', style: TextStyle(color: Colors.white)),
-        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
-          ),
-                 ListTile(
-            leading:const Icon(
-              Icons.movie,
-            ),
-            title: const Text('UpComing Movies', style: TextStyle(color: Colors.white)),
-        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
-          ),
-          ListTile(
-            leading:const Icon(
-              Icons.movie,
-            ),
-            title: const Text('Malayalam Movies', style: TextStyle(color: Colors.white)),
-        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
-          ),
-              ListTile(
-            leading:const Icon(
-              Icons.movie,
-            ),
-            title: const Text('Tamil Movies', style: TextStyle(color: Colors.white)),
-        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
-          ),
-              ListTile(
-            leading:const Icon(
-              Icons.movie,
-            ),
-            title: const Text('Hindi Movies', style: TextStyle(color: Colors.white)),
-        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
-          ),
-              ListTile(
-            leading:const Icon(
-              Icons.movie,
-            ),
-            title: const Text('Movie News', style: TextStyle(color: Colors.white)),
-        trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
-          ),
+            title: const Text('search', style: TextStyle(color: Colors.white)),
+       trailing: IconButton(onPressed: (){}, icon:const Icon(Icons.arrow_forward_ios))
+          ),SizedBox(height: 10,),   
           ListTile(
             leading:const Icon(
               Icons.logout,
