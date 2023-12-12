@@ -1,65 +1,12 @@
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:firebase_core/firebase_core.dart';
-// import 'package:flutter/material.dart';
-// import 'package:movie_app/firebase_options.dart';
-// import 'package:movie_app/google_Auth/views/splash.dart';
-// import 'package:movie_app/moviesDocument/controller/bottomNavigation.dart';
-// import 'package:provider/provider.dart';
-
-// void main()async{
-//   WidgetsFlutterBinding.ensureInitialized(); 
-//    await Firebase.initializeApp(
-//     // options: DefaultFirebaseOptions.currentPlatform
-//     options: const FirebaseOptions(
-//       apiKey: "AIzaSyAW8gYjcIwg78GZ-M9b7EyDEkWlpNnIVao",
-//        appId:"1:459735895311:android:a40963483b68efa034827a",
-//         messagingSenderId: "459735895311", 
-//         projectId:"authenticationbloc-d1ff7",)
-// );
-//    runApp(MyApp());
-// }
-
-// class MyApp extends StatelessWidget {
-//   const MyApp({super.key});
-
-//   // This widget is the root of your application.
-//   @override
-//   Widget build(BuildContext context) {
-//     return MultiProvider(
-//       providers: [
-//         ChangeNotifierProvider(create: (context) => NavigationProvider()),
-        
-//       ],
-//       child: MaterialApp(
-//         debugShowCheckedModeBanner: false,
-//         title: 'movie app',
-//        theme: ThemeData.dark().copyWith(
-//         scaffoldBackgroundColor: Colors.black,
-//        ),
-//        home: SplashScreen(),
-//       //  home: StreamBuilder(
-//       //     stream: FirebaseAuth.instance.authStateChanges(),
-//       //     builder: (context, snapshot) {
-//       //       if (snapshot.connectionState == ConnectionState.waiting) {
-//       //         return SplashScreen(); // Show a loading indicator or splash screen
-//       //       } else if (snapshot.hasData) {
-//       //         return HomeScreen();
-//       //       } else {
-//       //         return ScreenPage();
-//       //       }
-//       //     },
-//       //   ),
-//       ),
-//     );
-//   }
-// }
-
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:movie_app/apps/controller/bottomNavigation.dart';
 import 'package:movie_app/apps/views/Homescreen.dart';
+import 'package:movie_app/apps/views/moviedetails.dart';
+import 'package:movie_app/apps/views/new_screen.dart';
+import 'package:movie_app/apps/views/tvshowscreens.dart';
+import 'package:movie_app/apps/widget/botoomnavigation.dart';
 
 
 void main() async {
@@ -87,9 +34,23 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.black,
       ),
       home: HomeScreen(),
-      initialBinding: BindingsBuilder(() {
-        Get.put(NavigationController());
-      }),
+            getPages: [
+        // GetPage(name: '/login', page: () => const LoginScreen()),
+        GetPage(name: '/main', page: () => BottomNavigation()),
+        // GetPage(name: '/search', page: () => const SearchScreen()),
+        GetPage(name: '/news', page: () => NewsHomeScreen()),
+        GetPage(
+          name: '/movie/:id',
+          page: () => MovieScreen(movieId: Get.parameters['id']!),
+        ),
+        GetPage(
+          name: '/tv/:id',
+          page: () => TVShowScreen(Get.parameters['id']!),
+        ),
+      ],
+      // initialBinding: BindingsBuilder(() {
+      //   Get.put(NavigationController());
+      // }),
       // Uncomment the following if you want to use StreamBuilder for authentication
       // home: StreamBuilder(
       //   stream: FirebaseAuth.instance.authStateChanges(),

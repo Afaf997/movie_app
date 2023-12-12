@@ -18,8 +18,8 @@ Color accentSecondary = const Color(0xFF00FFD1);
 Color iconColors = Colors.white;
 
 const TextStyle voteAvg = TextStyle(
-  color: Colors.white,
-  fontSize: 40,
+  color: Color.fromARGB(255, 175, 16, 16),
+  fontSize: 23,
   fontWeight: FontWeight.w500,
 );
 

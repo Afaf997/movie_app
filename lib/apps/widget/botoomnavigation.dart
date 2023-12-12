@@ -5,6 +5,8 @@ import 'package:get/route_manager.dart';
 import 'package:movie_app/apps/controller/bottomNavigation.dart';
 import 'package:movie_app/apps/views/Homescreen.dart';
 import 'package:movie_app/apps/views/favorites.dart';
+import 'package:movie_app/apps/views/new_screen.dart';
+import 'package:movie_app/apps/views/news_details.dart';
 
 
 class BottomNavigation extends StatelessWidget {
@@ -45,13 +47,10 @@ class BottomNavigation extends StatelessWidget {
         Get.to(() =>  HomeScreen());
         break;
       case 1:
-        // Get.to(() => CategoriesPage());
+        Get.to(() => NewsHomeScreen());
         break;
       case 2:
-        Get.to(() => const FavoritePage());
-        break;
-      case 3:
-        // Get.to(() => ProfilePage());
+        Get.to(() =>  WishlistPage());
         break;
       default:
         break;

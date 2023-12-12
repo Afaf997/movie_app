@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:movie_app/apps/controller/maincontroller.dart';
-import 'package:movie_app/apps/views/search.dart';
+import 'package:movie_app/apps/views/search_Screen.dart';
 import 'package:movie_app/apps/widget/botoomnavigation.dart';
 import 'package:movie_app/apps/widget/Movie_carosel.dart';
 import 'package:movie_app/apps/widget/drawer.dart';
@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
           },
         ),
 
-        actions: [IconButton(onPressed: (){Navigator.push(context,MaterialPageRoute(builder: (context)=> MovieSearch()));},
+        actions: [IconButton(onPressed: (){Navigator.push(context,MaterialPageRoute(builder: (context)=> SearchScreen()));},
          icon:const Icon(Icons.search),
          iconSize: 33,)],
       ),
