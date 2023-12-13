@@ -5,7 +5,6 @@ import 'package:movie_app/apps/model/TvShowDetail.dart';
 import 'package:movie_app/apps/model/moviesModel.dart';
 import 'package:movie_app/apps/model/searchModel.dart';
 import 'package:movie_app/apps/model/trailer.dart';
-import 'package:movie_app/apps/services/episodeDetails.dart';
 
 class ApiCall{
   final Dio dio=Dio();
@@ -177,20 +176,6 @@ class ApiCall{
     }
   }
 
-  Future<List<Episodes>> getEpisodes(String showID, String seasonNum) async {
-    try {
-      List<Episodes> episodeList = [];
-      final url = '$mainUrl/tv/$showID/season/$seasonNum?$apiKey';
-      final response = await dio.get(url);
-      var shows = response.data['episodes'] as List;
-      episodeList = shows.map((m) => Episodes.fromJson(m)).toList();
-      return episodeList;
-    } catch (error, stacktrace) {
-      throw Exception(
-          'Exception accoured: $error with stacktrace: $stacktrace');
-    }
-  }
-
   // Search
 
   Future<List<SearchResult>> getSearchResult(searchQuery) async {
@@ -218,8 +203,8 @@ class ApiCall{
       var videos = response.data['results'] as List;
       List<VideoResults> videosList =
           videos.map((m) => VideoResults.fromJson(m)).toList();
-      var trailerLink = 'dQw4w9WgXcQ'; // Rick Roll
-      for (var i = 0; i < videosList.length; i++) {
+      var trailerLink = 'dQw4w9WgXcQ'; 
+      for (var i = 0; i < videosList.length; i++){
         if (videosList[i].site == 'YouTube' &&
             videosList[i].type == 'Trailer') {
           trailerLink = videosList[i].key.toString();

@@ -21,24 +21,21 @@ class WishlistController extends GetxController {
     final prefs = await SharedPreferences.getInstance();
     prefs.setStringList(wishlistKey, wishlist.toList());
   }
-
-  // Check if a movie/show is in the wishlist
   bool isInWishlist(String movieId) => wishlist.contains(movieId);
 
-  // Add to wishlist
   void addToWishlist(String movieId) {
     if (!wishlist.contains(movieId)) {
       wishlist.add(movieId);
       _saveWishlist();
-      update(); // Notify listeners about the change
+      update(); 
     } else {
+
     }
   }
 
-  // Remove from wishlist
   void removeFromWishlist(String movieId) {
     wishlist.remove(movieId);
     _saveWishlist();
-    update(); // Notify listeners about the change
+    update();
   }
 }

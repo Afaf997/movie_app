@@ -13,7 +13,6 @@ class NewsHomeScreen extends StatelessWidget {
   Future<void> _refresh() async {
     await newsController.fetchArticles();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(   

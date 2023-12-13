@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         scaffoldBackgroundColor: Colors.black,
       ),
       home: SplashScreen(),
-            getPages: [
+        getPages: [
         // GetPage(name: '/login', page: () => const LoginScreen()),
         GetPage(name: '/main', page: () => BottomNavigation()),
         GetPage(name: '/search', page: () => const SearchScreen()),

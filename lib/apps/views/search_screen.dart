@@ -17,19 +17,12 @@ class _SearchScreenState extends State<SearchScreen> {
   bool isLoading = true;
   final ScrollController _scrollController = ScrollController();
   final myController = TextEditingController();
-  String query = "";
+  String storageQuery= "";
 
   @override
   Widget build(BuildContext context) {
-    // ignore: deprecated_member_use
-    return WillPopScope(
-      onWillPop: () async {
-        Get.back();
-        return false;
-      },
-      child: Scaffold(
-       
-        resizeToAvoidBottomInset: false,
+      return Scaffold(
+        // resizeToAvoidBottomInset: false,
         backgroundColor: background_primary,
         extendBody: true,
         body: Stack(
@@ -70,18 +63,18 @@ class _SearchScreenState extends State<SearchScreen> {
                       ),
                       onChanged: (value) {
                         setState(() {
-                          query = myController.text;
+                         storageQuery= myController.text;
                         });
                       },
                     ),
                   ),
                   SearchList(
-                      future: ApiCall().getSearchResult(query),
+                      future: ApiCall().getSearchResult( storageQuery),
                       scrollController: _scrollController),
                 ],
               ),
             ),
-            if (query == "")
+            if ( storageQuery == "")
               Align(
                 alignment: Alignment.center,
                 child: Column(
@@ -101,7 +94,7 @@ class _SearchScreenState extends State<SearchScreen> {
               ),
           ],
         ),
-      ),
+      
     );
   }
 }

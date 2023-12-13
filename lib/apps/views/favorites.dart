@@ -38,7 +38,7 @@ class WishlistPage extends StatelessWidget {
               ),
             );
           } else {
-            // Display wishlist items
+   
             return ListView.builder(
               itemCount: wishlistController.wishlist.length,
               itemBuilder: (context, index) {
@@ -58,10 +58,10 @@ class WishlistPage extends StatelessWidget {
                           _handleItemDelete(movieId);
                         },
                         background: Container(
-                          color: Colors.red,
+                          color: Colors.white,
                           alignment: Alignment.centerRight,
                           padding: const EdgeInsets.only(right: 16),
-                          child: const Icon(Icons.delete, color: Colors.white),
+                          child: const Icon(Icons.delete, color: Colors.black),
                         ),
                         child: GestureDetector(
                           onTap: () {
