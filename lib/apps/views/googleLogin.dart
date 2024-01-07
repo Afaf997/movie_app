@@ -4,8 +4,6 @@ import 'package:movie_app/apps/services/authservices.dart';
 import 'package:movie_app/apps/views/Homescreen.dart';
 import 'package:movie_app/apps/views/signIn.dart';
 
-
-
 class ScreenPage extends StatelessWidget {
   const ScreenPage({super.key});
 
@@ -66,11 +64,11 @@ class ScreenPage extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     child: ElevatedButton(
-                      onPressed: () async{
+                      onPressed: () async {
                         // await FirebaseServices().signInWithGoogle();
                         // Navigator.pop(context);
                         Get.to(HomeScreen());
-                          },
+                      },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.amber,
                         padding: const EdgeInsets.all(16),
@@ -78,13 +76,13 @@ class ScreenPage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(5),
                         ),
                       ),
-                      child: const Text('login with Google',
+                      child: const Text(
+                        'login with Google',
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ),
                   ),
                   SizedBox(height: 20),
-                
                 ],
               ),
             ),

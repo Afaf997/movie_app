@@ -10,8 +10,8 @@ class ApiCall{
   final Dio dio=Dio();
   final String mainUrl = 'https://api.themoviedb.org/3';
   final String apiKey = 'api_key=94755d65f500af1c6668340edf3bb708';
-
-   Future<List<Results>>popularMovies()async{
+  
+  Future<List<Results>>popularMovies()async{
     try {
       List<Results> movieList = [];
       final url = '$mainUrl/movie/popular?$apiKey&page=1';
@@ -195,7 +195,7 @@ class ApiCall{
   }
 
   // trailer Link
-
+  
   Future<String> getTrailerLink(String movieId, String mediaType) async {
     try {
       final url = '$mainUrl/$mediaType/$movieId/videos?$apiKey';

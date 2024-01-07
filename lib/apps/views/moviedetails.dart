@@ -71,8 +71,11 @@ class _MovieScreenState extends State<MovieScreen> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       backgroundColor: background_primary,
-        appBar: AppBar(
-        title: Text('Movie Details',style: TextStyle(fontWeight: FontWeight.w500),), 
+      appBar: AppBar(
+        title: Text(
+          'Movie Details',
+          style: TextStyle(fontWeight: FontWeight.w500),
+        ),
         automaticallyImplyLeading: true,
       ),
       body: isLoading
@@ -160,7 +163,10 @@ class _MovieScreenState extends State<MovieScreen> {
                                       );
                                     }
                                   },
-                                ),SizedBox(height: 5,),
+                                ),
+                                SizedBox(
+                                  height: 5,
+                                ),
                                 Column(
                                   children: [
                                     Padding(
