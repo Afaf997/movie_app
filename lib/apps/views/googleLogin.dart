@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:movie_app/apps/services/authservices.dart';
 import 'package:movie_app/apps/views/Homescreen.dart';
-import 'package:movie_app/apps/views/signIn.dart';
 
 class ScreenPage extends StatelessWidget {
   const ScreenPage({super.key});

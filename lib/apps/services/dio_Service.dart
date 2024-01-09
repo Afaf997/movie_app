@@ -6,12 +6,12 @@ import 'package:movie_app/apps/model/moviesModel.dart';
 import 'package:movie_app/apps/model/searchModel.dart';
 import 'package:movie_app/apps/model/trailer.dart';
 
-class ApiCall{
-  final Dio dio=Dio();
+class ApiCall {
+  final Dio dio = Dio();
   final String mainUrl = 'https://api.themoviedb.org/3';
   final String apiKey = 'api_key=94755d65f500af1c6668340edf3bb708';
-  
-  Future<List<Results>>popularMovies()async{
+
+  Future<List<Results>> popularMovies() async {
     try {
       List<Results> movieList = [];
       final url = '$mainUrl/movie/popular?$apiKey&page=1';
@@ -20,12 +20,12 @@ class ApiCall{
       movieList = movies.map((m) => Results.fromJson(m)).toList();
       print("data recievd");
       return movieList;
-      
     } catch (error, stacktrace) {
       throw Exception('Exception occured: $error with stacktrace: $stacktrace');
     }
-   }
-    Future<List<Results>> getMalayalamLanguage() async {
+  }
+
+  Future<List<Results>> getMalayalamLanguage() async {
     try {
       List<Results> movieList = [];
       final url = '$mainUrl/discover/movie?$apiKey&with_original_language=ml';
@@ -39,7 +39,7 @@ class ApiCall{
     }
   }
 
-   Future<List<TvShow>> getPopularShow() async {
+  Future<List<TvShow>> getPopularShow() async {
     try {
       List<TvShow> showsList = [];
       final url = '$mainUrl/tv/popular?$apiKey&page=1';
@@ -82,7 +82,7 @@ class ApiCall{
     }
   }
 
-    Future<List<Results>> getTopRatedMovie() async {
+  Future<List<Results>> getTopRatedMovie() async {
     try {
       List<Results> movieList = [];
       final url = '$mainUrl/movie/top_rated?$apiKey&page=1';
@@ -110,7 +110,7 @@ class ApiCall{
     }
   }
 
-   Future<List<Results>> getAnimated() async {
+  Future<List<Results>> getAnimated() async {
     try {
       List<Results> movieList = [];
       final url = '$mainUrl/discover/movie?$apiKey&with_genres=16';
@@ -122,7 +122,6 @@ class ApiCall{
       throw Exception('Exception occured: $error with stacktrace: $stacktrace');
     }
   }
-
 
   Future<MovieDetail> getMovieDetail(String movieId) async {
     try {
@@ -162,8 +161,6 @@ class ApiCall{
     }
   }
 
-
-
   Future<TvShowDetail> getTvShowDetail(String showId) async {
     try {
       final url = '$mainUrl/tv/$showId?$apiKey';
@@ -195,7 +192,7 @@ class ApiCall{
   }
 
   // trailer Link
-  
+
   Future<String> getTrailerLink(String movieId, String mediaType) async {
     try {
       final url = '$mainUrl/$mediaType/$movieId/videos?$apiKey';
@@ -203,8 +200,8 @@ class ApiCall{
       var videos = response.data['results'] as List;
       List<VideoResults> videosList =
           videos.map((m) => VideoResults.fromJson(m)).toList();
-      var trailerLink = 'dQw4w9WgXcQ'; 
-      for (var i = 0; i < videosList.length; i++){
+      var trailerLink = 'dQw4w9WgXcQ';
+      for (var i = 0; i < videosList.length; i++) {
         if (videosList[i].site == 'YouTube' &&
             videosList[i].type == 'Trailer') {
           trailerLink = videosList[i].key.toString();
@@ -216,5 +213,4 @@ class ApiCall{
           'Exception accoured: $error with stacktrace: $stacktrace');
     }
   }
-
 }
