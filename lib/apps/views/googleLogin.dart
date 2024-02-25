@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:movie_app/apps/services/authservices.dart';
 import 'package:movie_app/apps/views/Homescreen.dart';
 
 class ScreenPage extends StatelessWidget {

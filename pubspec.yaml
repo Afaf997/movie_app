@@ -39,10 +39,6 @@ dependencies:
   google_fonts: ^6.1.0
   syncfusion_flutter_sliders: ^23.2.6
   flutter_spinkit: ^5.2.0
-  firebase_core: ^2.24.0
-  firebase_auth: ^4.15.0
-  firebase_storage: ^11.5.3
-  cloud_firestore: ^4.13.3
   uuid: ^4.2.1
   google_sign_in: ^6.1.6
   lottie: ^2.7.0
