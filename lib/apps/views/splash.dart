@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
                 ),
                 SizedBox(width: 10),
                 Text(
-                  'App name',
+                  'ShowSprint',
                   style: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.bold,

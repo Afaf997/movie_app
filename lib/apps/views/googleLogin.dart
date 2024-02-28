@@ -40,7 +40,7 @@ class ScreenPage extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Text(
-                        'App name',
+                        'ShowSprint',
                         style: TextStyle(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -76,7 +76,7 @@ class ScreenPage extends StatelessWidget {
                         ),
                       ),
                       child: const Text(
-                        'login with Google',
+                        'Start with ShowSprint',
                         style: TextStyle(fontSize: 20, color: Colors.white),
                       ),
                     ),
